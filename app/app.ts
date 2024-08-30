@@ -1,8 +1,9 @@
-import { Negociacao } from "./models/negociacao.js";
+import { NegociacaoController } from "./controllers/negociacaoController.js"
 
+const form:HTMLFormElement = document.querySelector('.form')
+const controller = new NegociacaoController()
 
-const negociacao = new Negociacao(new Date(),10,100)
-
-console.log(negociacao.volume)
-console.log(negociacao)
-alert('fala cmg')
+form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    controller.submit()
+})
